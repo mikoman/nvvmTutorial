@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0407783-C47E-4369-8BD8-C8B046C14DB0}</ProjectGuid>
+    <ProjectGuid>{1B543ABE-EF06-4CEE-A5D7-3C6BC25997EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalculatorLibrary</RootNamespace>
-    <AssemblyName>CalculatorLibrary</AssemblyName>
+    <RootNamespace>CalculatorCommandParsingLibrary</RootNamespace>
+    <AssemblyName>CalculatorCommandParsingLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,22 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="CalculatorReplLoop.cs" />
+    <Compile Include="InputParserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalculatorCommandParsingLibrary\CalculatorCommandParsingLibrary.csproj">
-      <Project>{1b543abe-ef06-4cee-a5d7-3c6bc25997eb}</Project>
-      <Name>CalculatorCommandParsingLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CommonTypes\CommonTypesLibrary.csproj">
       <Project>{8fb44cb5-5385-4be4-9e51-ab7634b9c0ef}</Project>
       <Name>CommonTypesLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InputOutput\InputOutputLibrary.csproj">
-      <Project>{0b125d0f-5041-4743-86e8-acc0c826e5c1}</Project>
-      <Name>InputOutputLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

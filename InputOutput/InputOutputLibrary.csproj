@@ -43,6 +43,12 @@
     <Compile Include="ConsoleOutputService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonTypes\CommonTypesLibrary.csproj">
+      <Project>{8fb44cb5-5385-4be4-9e51-ab7634b9c0ef}</Project>
+      <Name>CommonTypesLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
