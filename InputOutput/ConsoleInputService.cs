@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    public class ConsoleInputService
+    public class ConsoleInputService : InputOutput.IConsoleInputService
     {
         public string ReadCommand()
         {

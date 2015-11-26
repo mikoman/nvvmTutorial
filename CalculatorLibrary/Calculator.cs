@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    public class Calculator
+    public class Calculator : CalculatorLibrary.ICalculator
     {
         public int Execute(CommandTypes commandType, Arguments args)
         {

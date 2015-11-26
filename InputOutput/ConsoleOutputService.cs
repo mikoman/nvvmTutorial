@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    public class ConsoleOutputService
+    public class ConsoleOutputService : InputOutput.IOutputService
     {
         public void WriteMessage(string message)
         {

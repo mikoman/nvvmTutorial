@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-   public class InputParserService
+   public class InputParserService : CalculatorCommandParsingLibrary.IInputParserService
     {
        public CommandTypes ParseCommand(string command)
        {

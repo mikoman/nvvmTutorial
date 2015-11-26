@@ -48,6 +48,10 @@
       <Project>{8fb44cb5-5385-4be4-9e51-ab7634b9c0ef}</Project>
       <Name>CommonTypesLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InterfacesLibrary\InterfacesLibrary.csproj">
+      <Project>{b8fe03f4-7ca1-417b-b2e8-28ebb7b0a4ca}</Project>
+      <Name>InterfacesLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
