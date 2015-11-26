@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CalculatorCommandParsingLibrary;
+using CalculatorLibrary;
+using InputOutput;
 
 namespace Application
 {
@@ -10,36 +8,40 @@ namespace Application
     {
         public CalculatorReplLoop()
         {
-            calculator = new Calculator();
-            inputParserService = new InputParserService();
-            inputService = new ConsoleInputService();
-            outputService = new ConsoleOutputService();
-            
+            Calculator = new Calculator();
+            InputService = new ConsoleInputService();
+            OutputService = new ConsoleOutputService();
+            ParsingService = new InputParserService();
+
         }
+        public ICalculator Calculator { get; set; }
+        public IInputService InputService { get; set; }
+        public IOutputService OutputService { get; set; }
+        public IInputParserService ParsingService { get; set; }
+
+            
+        
 
         public void Run()
         {
             while (true)
             {
-                string command = inputService.ReadCommand();
+                string command = InputService.ReadCommand();
 
                 try
                 {
-                    CommandTypes commandType = inputParserService.ParseCommand(command);
+                    CommandTypes commandType = ParsingService.ParseCommand(command);
 
-                    Arguments args = inputService.ReadArguments();
+                    Arguments args = InputService.ReadArguments();
 
-                    outputService.WriteMessage(calculator.Execute(commandType, args).ToString());
+                    OutputService.WriteMessage(Calculator.Execute(commandType, args).ToString());
                 }
                 catch
                 {
-                    outputService.WriteMessage("Mistake!");
+                    OutputService.WriteMessage("Mistake!");
                 }
             }
         }
-        ConsoleInputService inputService;
-        ConsoleOutputService outputService;
-        Calculator calculator;
-        InputParserService inputParserService;
+    
     }
 }

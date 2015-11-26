@@ -11,6 +11,7 @@ namespace Application
         static void Main(string[] args)
         {
             CalculatorReplLoop loop = new CalculatorReplLoop();
+          
             loop.Run();
         }
     }
