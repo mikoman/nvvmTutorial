@@ -1,7 +1,7 @@
 ﻿using System;
 namespace InputOutput
 {
-    public interface IConsoleInputService
+    public interface IInputService
     {
         Application.Arguments ReadArguments();
         string ReadCommand();
