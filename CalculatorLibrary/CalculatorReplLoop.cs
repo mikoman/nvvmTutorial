@@ -4,20 +4,20 @@ using InputOutput;
 
 namespace Application
 {
-    public class CalculatorReplLoop
+    public class CalculatorReplLoop : CalculatorLibrary.ICalculatorReplLoop
     {
-        public CalculatorReplLoop()
+        public CalculatorReplLoop(ICalculator calculator, IInputService inputService, IOutputService outputService, IInputParserService parsingService)
         {
-            Calculator = new Calculator();
-            InputService = new ConsoleInputService();
-            OutputService = new ConsoleOutputService();
-            ParsingService = new InputParserService();
+            this.calculator = calculator;
+            this.inputService = inputService;
+            this.outputService = outputService;
+            this.parsingService = parsingService;
 
         }
-        public ICalculator Calculator { get; set; }
-        public IInputService InputService { get; set; }
-        public IOutputService OutputService { get; set; }
-        public IInputParserService ParsingService { get; set; }
+         ICalculator calculator;
+         IInputService inputService;
+         IOutputService outputService;
+         IInputParserService parsingService;
 
             
         
@@ -26,19 +26,19 @@ namespace Application
         {
             while (true)
             {
-                string command = InputService.ReadCommand();
+                string command = inputService.ReadCommand();
 
                 try
                 {
-                    CommandTypes commandType = ParsingService.ParseCommand(command);
+                    CommandTypes commandType = parsingService.ParseCommand(command);
 
-                    Arguments args = InputService.ReadArguments();
+                    Arguments args = inputService.ReadArguments();
 
-                    OutputService.WriteMessage(Calculator.Execute(commandType, args).ToString());
+                    outputService.WriteMessage(calculator.Execute(commandType, args).ToString());
                 }
                 catch
                 {
-                    OutputService.WriteMessage("Mistake!");
+                    outputService.WriteMessage("Mistake!");
                 }
             }
         }
